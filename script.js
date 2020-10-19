@@ -1,5 +1,6 @@
 
 /*
+javasctript back to top button:
         -define variables
         -calculate doc height and set offeset to a quarter of that value.
         -add event listeners for scroll and click.
