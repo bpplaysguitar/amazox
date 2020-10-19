@@ -23,7 +23,7 @@
             alt="amazox logo"
         /></a>
         <div class="search">
-          <input type="text" class="searchbar" />
+          <input type="text" id="product" class="searchbar" placeholder="Search Products"/>
           <button class="btn-search" type="button">&#x1F50D;</button>
         </div>
         <div class="language">
@@ -147,13 +147,34 @@
             </a>
             <p><a href="#">Shop now</a> </p>
           </div>
-          
+                <div class="featured-category">
+                  <h2>Headphones</h2><a href="#">
+                    <img src="./images/grado.jpg" class="img-featured">
+                  </a>
+                  <p><a href="#">Start listening</a> </p>
+                </div>
+                
+                <div class="featured-category">
+                  <h2>Home Office</h2><a href="#">
+                    <img src="./images/desk.jpg" class="img-featured">
+                  </a>
+                  <p><a href="#">Home office furniture</a> </p>
+                </div>
+                
+                <div class="featured-category">
+                  <h2>Sporting Goods</h2><a href="#">
+                    <img src="./images/baseball glove.jpg" class="img-featured">
+                  </a>
+                  <p><a href="#">Shop sporting goods</a> </p>
+                </div>
           
         </div>
         
       </main>
     </div>
     <footer>
+      
+      <a id = "back-to-top" href ="#">Top</a>
       <a href ="#" class="footer-back-to-top"><div>Back to top</div></a>
       <div class="footer">
         <div class="footer-column1"><h4>Get to Know Us</h4>
@@ -338,5 +359,120 @@
 
 
       </footer>
+
+      <script>
+        /* 
+        -define variables
+        -calculate doc height and set offeset to a quarter of that value.
+        -add event listeners for scroll and click.
+         */ 
+        
+        var btt = document.getElementById("back-to-top"),
+            body = document.body,
+            docElem = document.documentElement,
+            offset = 100,
+            scrollPos, docHeight;
+
+            // calculate document height
+            docHeight = Math.max(body.scrollHeight, body.offsetHeight, docElem.clientHeight, docElem.scrollHeight, docElem.offsetHeight);
+            if (docHeight != 'undefined') {
+              offset = docHeight / 4;
+              
+            }
+
+            window.addEventListener("scroll", function(event) {
+              scrollPos = body.scrollTop || docElem.scrollTop;
+              btt.className = (scrollPos > offset) ? "visible" : "";
+            });
+
+// autocomplete
+  var targetInput = document.getElementById("product"),
+    results = document.getElementById("autocomplete-results"),
+    productList = [
+      "iphone",
+      "galaxy s10",
+      "galaxy s20",
+      "iphone 11",
+      "iphone 11 pro",
+      "iphone 11 pro max",
+      "xbox series x",
+      "playstation 5",
+      "samsung",
+      "samsung tv",
+      "samsung 4k",
+      "4k tv",
+      "4k led",
+      "macbook pro",
+      "lego",
+      "speakers",
+      "bose",
+      "jbl speakers",
+      "guitars",
+      "yeti cooler",
+      "yeti tumbler",
+      "focusrite scarlett",
+      "rode microphone",
+      "adidas",
+      "adidas shoes",
+      "shoes",
+      "rolex watches",
+      "omega watches",
+      "tag heuer watches",
+      "tudor watches",
+      "ralph lauren",
+      "cat food",
+      "dog food",
+      "pet supplies",
+      "groceries",
+      "food",
+      "xbox live gold",
+      "xbox controllers",
+      "cell phones",
+      "refrigerators",
+      "ovens",
+      "microwaves",
+      "toasters",
+      "radios",
+      "ipods",
+      "jeans",
+    ],
+    matches = [];
+
+  targetInput.focus;
+
+  targetInput.addEventListener("keyup", function (event) {
+    // key codes: enter:13, up:38, down:40
+
+    results.innerHTML = "";
+    toggleResults("hide");
+
+    if (this.value.length > 0) {
+      matches = getMatches(this.value);
+    }
+  });
+
+  function toggleResults(action) {
+    if (action == "show") {
+      results.classList.add("visible");
+    } else if (action == "hide") {
+      results.classList.remove("visible");
+    }
+  }
+
+  /* define function for check if input value matches any product names */
+  function getMatches(inputText) {
+    var matchList = [];
+
+    for (var i = 0; i < productList.length; i++) {
+      if (productList[i].toLowerCase().indexOf()) {
+        
+      }
+    }
+
+    
+  }
+
+      </script>
+
   </body>
 </html>
